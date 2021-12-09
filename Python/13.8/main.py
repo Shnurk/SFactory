@@ -10,4 +10,6 @@ for i in range(0, len(years)):
             summ+=990
         else:
             summ+=1390
+if amount>3:
+    summ=summ*0.9
 print("Вы купили ",amount," билетов. C вас ", summ)
