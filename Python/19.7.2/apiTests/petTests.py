@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 from app.api import PetFriends
@@ -51,13 +53,6 @@ def test_create_pet_simple_positive():
         assert status == 200
         assert result['name']==testname
 
-def test_set_photo_positive():
-        _, akey = pf.get_api_key(valid_email, valid_password)
-        testname = 'Фуфайкин'
-        _, petId = pf.create_pet_simple(akey, testname, 'Интернет-зверь', 9)
-        photo='../images/business_pica.jpeg'
-        status,result = pf.set_photo(akey,petId,photo)
-        assert status == 200
 
 def test_update_info_positive():
         _, akey =pf.get_api_key(valid_email,valid_password)
